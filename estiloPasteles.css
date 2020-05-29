@@ -1,0 +1,15 @@
+body{
+  background-color:#DD6AA4
+}
+.testbox{
+  background-color: purple;
+  border: 2px solid black;
+  padding: 15px;
+  text-align: center;
+  margin:20px auto;
+  width: : 400;
+}
+#texto{
+  font:bold 30px Tahoma;
+  width:100%;
+}
