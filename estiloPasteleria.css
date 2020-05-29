@@ -124,3 +124,8 @@ p{
   padding: 20px;
   background-repeat: no-repeat;
 }
+.card{
+  background: #E7C5A5;
+  margin-top: 50px;
+  margin-left: 10px;
+}
