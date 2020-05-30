@@ -1,15 +1,29 @@
-body{
-  background-color:#DD6AA4
-}
-.testbox{
-  background-color: purple;
-  border: 2px solid black;
-  padding: 15px;
+header,footer{
+  background-color: white;
+  border-style: solid;
+  border-radius: 20px;
+  padding: 5px;
   text-align: center;
-  margin:20px auto;
-  width: : 400;
 }
-#texto{
-  font:bold 30px Tahoma;
-  width:100%;
+.centro{
+  width:20%;
+  margin-left:auto;
+  margin-right: auto;
+  display: block;
+}
+body{
+  background-color:#D8BFD8
+}
+.main{
+  height: 1440px;
+}
+img{
+  transition: all 0.5s linear;
+}
+img:hover{
+  transform: scale(0.9);
+  border-radius: 30px;
+}
+.main img{
+  width: 20%;
 }
