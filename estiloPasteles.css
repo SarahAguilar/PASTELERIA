@@ -1,9 +1,9 @@
 header,footer{
-  background-color: white;
-  border-style: solid;
+  background-color:#FF1493;
   border-radius: 20px;
   padding: 5px;
   text-align: center;
+  color: #fff;
 }
 .centro{
   width:20%;
@@ -13,9 +13,6 @@ header,footer{
 }
 body{
   background-color:#D8BFD8
-}
-.main{
-  height: 1440px;
 }
 img{
   transition: all 0.5s linear;
@@ -27,3 +24,15 @@ img:hover{
 .main img{
   width: 20%;
 }
+.uno{
+  width:350px;
+  height: 350px;
+  border:1px solid;
+  float: left;
+  text-align: center;
+}
+.dos{
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
