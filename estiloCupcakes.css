@@ -9,26 +9,37 @@ header,footer{
   width:20%;
   margin-left:auto;
   margin-right: auto;
-  display: block;}
-  body{
-    background-color:#D8BFD8
-  }
-  img{
-    transition: all 0.5s linear;
-  }
-  img:hover{
-    transform: scale(0.9);
-    border-radius: 30px;}
-    .main img{
-      width: 20%;
-    }
-    .uno{
-      width:350px;
-      height: 350px;
-      border:1px solid;
-      float: left;
-      text-align: center;}
-      .dos{
-        margin-left: 80px;
-        margin-right: 80px;
-      } 
+  display: block;
+}
+body{
+  background-color:#D8BFD8
+}
+img{
+  transition: all 0.5s linear;
+}
+img:hover{
+  transform: scale(0.9);
+  border-radius: 30px;
+}
+.main img{
+  width: 20%;
+}
+.uno{
+  width:350px;
+  height: 420px;
+  /*border:1px solid;*/
+  float: left;
+  text-align: center;
+}
+.dos{
+  margin-left: 130px;
+  margin-right: 130px;
+}
+.COMPRAR{
+  text-decoration:none;
+  border: 1px solid #FFC0CB;
+  padding: 10px 10px 10px 10px;
+  margin: 10px;
+  background-color:#FFC0CB;
+  border-radius: 5px;
+}
