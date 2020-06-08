@@ -1,0 +1,16 @@
+img{
+  height: 120px;
+  width: 120px;
+}
+h1{
+  text-align: center;
+  background-color: pink;
+  font-family: century gothic;
+}
+.row{
+  margin-left: 0px;
+}
+body{
+background-color: #D8BFD8;
+}
+a:hover{background-color: #FF1493}

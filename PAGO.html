@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pago pastel</title>
+    <link href="estiloPAGO.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+    <header>
+      <center><img src="images/LOGOO.png"></center>
+    </header>
+    <h1>Seccion de pago</h1>
+    <div class="container">
+    <form>
+<div class="row">
+  <div class="col-md-4 order-md-2 mb-4">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Ingresa nombre</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre(s)">
+     </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Ingresa primer apellido</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Apellido paterno">
+     </div>
+
+     <div class="form-group">
+       <label for="exampleFormControlInput1">Ingresa segundo apellido</label>
+       <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Apellido materno">
+      </div>
+
+      <div class="row">
+                <div class="col-md-5 mb-3">
+                  <label for="country">País</label>
+                  <select class="custom-select d-block w-100" id="country" required>
+                    <option value="">Opciones...</option>
+                    <option>China</option>
+                    <option>EstadosUnidos</option>
+                    <option>España</option>
+                    <option>Francia</option>
+                    <option>México</option>
+                    <option>Turquia</option>
+                    <option>Otro</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Porfavor seleccione un país.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="state">Estado</label>
+                  <select class="custom-select d-block w-100" id="state" required>
+                    <option value="">Opciones...</option>
+                    <option>Estado de Mexíco</option>
+                    <option>Yucatan</option>
+                    <option>Jalisco</option>
+                    <option>Puebla</option>
+                    <option>Michoacan</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Porfavor seleccione un estado.
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="zip">CP</label>
+                  <input type="text" class="form-control" id="zip" placeholder="" required>
+                  <div class="invalid-feedback">
+                    Ingrese un Codigo Postal valido.
+                  </div>
+                </div>
+              </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Ingresa calle y numero</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Calle y numero">
+         </div>
+
+         <div class="form-group">
+           <label for="exampleFormControlInput1">Ingresa colonia</label>
+           <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Colonia">
+          </div>
+
+          <h4 class="mb-3">Metodo de pago</h4>
+
+      <div class="d-block my-3">
+        <div class="custom-control custom-radio">
+          <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+          <label class="custom-control-label" for="credit">Tarjeta de credito</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+          <label class="custom-control-label" for="debit">Tarjeta de debito</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+          <label class="custom-control-label" for="paypal">PayPal</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="cc-name">Nombre de la tarjeta</label>
+          <input type="text" class="form-control" id="cc-name" placeholder="" required>
+          <small class="text-muted">Nombre completo escrito en la tarjeta</small>
+          <div class="invalid-feedback">
+            Se requiere un nombre
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="cc-number">Numero de tarjeta</label>
+          <input type="text" class="form-control" id="cc-number" placeholder="" required>
+          <small class="text-muted">Numero escrito en la tarjeta</small>
+          <div class="invalid-feedback">
+            Se requiere un numero de tarjeta
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="cc-expiration">Expiracion</label>
+            <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+            <div class="invalid-feedback">
+              Se requiere fecha de expiracion
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="cc-cvv">CVV</label>
+            <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+            <div class="invalid-feedback">
+              Se requiere un CVV
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Continuar</button>
+      </form>
+    </div>
+  </div>
+      </div>
+    </div>
+
+
+  </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</html>
