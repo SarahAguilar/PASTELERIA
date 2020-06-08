@@ -23,6 +23,7 @@ a:hover{background-color: #FF1493}
 body{
 background-color: #D8BFD8;
 }
+asz
 
 
 #header {
@@ -128,4 +129,13 @@ p{
   background: #E7C5A5;
   margin-top: 50px;
   margin-left: 10px;
+}
+aside{
+  display:inline-block;
+  width:300px;
+  min-height:400px;
+    background:#E7C5A5;
+    float:right;
+    margin:30px;
+padding: 50px;
 }
