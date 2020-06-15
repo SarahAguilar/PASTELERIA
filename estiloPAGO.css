@@ -14,3 +14,7 @@ body{
 background-color: #D8BFD8;
 }
 a:hover{background-color: #FF1493}
+
+aside{
+  float:right;
+}
