@@ -15,17 +15,18 @@
             <ul id="carrito" class="list-group"></ul>
             <hr>
 
-            <p class="text-right">Total: <span id="total"></span>pesos</p>
+            <p class="text-right">Total: $<span id="total"></span></p>
+            <center>
+              <button type="button" class="btn btn-outline-light btn-lg" href="PAGO.html">PAGAR</button>
+            </center>
         </aside>
     </div>
 </div>
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Personalizalo</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <script>
@@ -49,7 +50,31 @@
                     nombre: 'Muy Adornado ',
                     precio: 65,
                     imagen: 'https://cdn0.bodas.com.mx/usr/3/3/2/5/cfb_1229463.jpg'
-                }
+                },
+                {
+                    id: 4,
+                    nombre: 'Durazno',
+                    precio: 5,
+                    imagen: 'https://img.vixdata.io/pd/jpg-large/es/sites/default/files/imj/elgranchef/d/duraznos-en-almibar.jpg'
+                },
+                {
+                    id: 5,
+                    nombre: 'Fresa',
+                    precio: 10,
+                    imagen: 'https://recetolandia.com/wp-content/uploads/2000/08/fresones-en-almibar.jpg'
+                },
+                {
+                    id: 6,
+                    nombre: 'Frambuesa',
+                    precio: 15,
+                    imagen: 'https://cl.all.biz/img/cl/catalog/26582.jpeg'
+                },
+                {
+                    id: 7,
+                    nombre: 'Nuez',
+                    precio: 20,
+                    imagen: 'https://laopinion.com/wp-content/uploads/sites/3/2016/10/nuez-walnut-shutterstock_407822113-copy.jpg?quality=80&strip=all'
+                },
 
 
             ]
@@ -78,11 +103,11 @@
 
                     let miNodoPrecio = document.createElement('p');
                     miNodoPrecio.classList.add('card-text');
-                    miNodoPrecio.textContent = info['precio'] + '$';
+                    miNodoPrecio.textContent =  '$' + info['precio'];
 
                     let miNodoBoton = document.createElement('button');
                     miNodoBoton.classList.add('btn', 'btn-primary');
-                    miNodoBoton.textContent = '+';
+                    miNodoBoton.textContent = 'Agregar';
                     miNodoBoton.setAttribute('marcador', info['id']);
                     miNodoBoton.addEventListener('click', anyadirCarrito);
 
@@ -122,11 +147,11 @@
 
                     let miNodo = document.createElement('li');
                     miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
-                    miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0]['nombre']} - ${miItem[0]['precio']}$`;
+                    miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0]['nombre']} - $${miItem[0]['precio']}`;
 
                     let miBoton = document.createElement('button');
                     miBoton.classList.add('btn', 'btn-danger', 'mx-5');
-                    miBoton.textContent = 'X';
+                    miBoton.textContent = 'Eliminar';
                     miBoton.style.marginLeft = '1rem';
                     miBoton.setAttribute('item', item);
                     miBoton.addEventListener('click', borrarItemCarrito);
@@ -134,6 +159,7 @@
                     miNodo.appendChild(miBoton);
                     $carrito.appendChild(miNodo);
                 })
+
             }
 
             function borrarItemCarrito () {
@@ -162,10 +188,13 @@
                     total = total + miItem[0]['precio'];
                 }
 
+
                 let totalDosDecimales = total.toFixed(2);
 
                 $total.textContent = totalDosDecimales;
             }
+
+
 
             renderItems();
         }
