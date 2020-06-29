@@ -1,0 +1,168 @@
+<div class="container">
+    <div class="row">
+
+        <main id="items" class="col-sm-8 row"></main>
+        <!-- Carrito -->
+        <aside class="col-sm-4">
+            <h2>Carrito</h2>
+
+            <ul id="carrito" class="list-group"></ul>
+            <hr>
+
+            <p class="text-right">Total: <span id="total"></span>&pesos;</p>
+        </aside>
+    </div>
+</div>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script>
+        window.onload = function () {
+
+              let baseDeDatos = [
+                {
+                    id: 1,
+                    nombre: 'Sencillo',
+                    precio: 35,
+                    imagen: 'https://i.pinimg.com/originals/2b/bf/b8/2bbfb86880b7aae80913f058f564d3fe.jpg'
+                },
+                {
+                    id: 2,
+                    nombre: 'Adornado',
+                    precio: 55,
+                    imagen: 'https://cdn.shopify.com/s/files/1/0365/1045/products/Pastel_Conejito_macaron.jpeg?v=1584026128'
+                },
+                {
+                    id: 3,
+                    nombre: 'Muy Adornado ',
+                    precio: 65,
+                    imagen: 'https://cdn0.bodas.com.mx/usr/3/3/2/5/cfb_1229463.jpg'
+                }
+
+
+            ]
+            let $items = document.querySelector('#items');
+            let carrito = [];
+            let total = 0;
+            let $carrito = document.querySelector('#carrito');
+            let $total = document.querySelector('#total');
+
+            function renderItems () {
+                for (let info of baseDeDatos) {
+
+                    let miNodo = document.createElement('div');
+                    miNodo.classList.add('card', 'col-sm-4');
+
+                    let miNodoCardBody = document.createElement('div');
+                    miNodoCardBody.classList.add('card-body');
+
+                    let miNodoTitle = document.createElement('h5');
+                    miNodoTitle.classList.add('card-title');
+                    miNodoTitle.textContent = info['nombre'];
+
+                    let miNodoImagen = document.createElement('img');
+                    miNodoImagen.classList.add('img-fluid');
+                    miNodoImagen.setAttribute('src', info['imagen']);
+
+                    let miNodoPrecio = document.createElement('p');
+                    miNodoPrecio.classList.add('card-text');
+                    miNodoPrecio.textContent = info['precio'] + '$';
+
+                    let miNodoBoton = document.createElement('button');
+                    miNodoBoton.classList.add('btn', 'btn-primary');
+                    miNodoBoton.textContent = '+';
+                    miNodoBoton.setAttribute('marcador', info['id']);
+                    miNodoBoton.addEventListener('click', anyadirCarrito);
+
+                    miNodoCardBody.appendChild(miNodoImagen);
+                    miNodoCardBody.appendChild(miNodoTitle);
+                    miNodoCardBody.appendChild(miNodoPrecio);
+                    miNodoCardBody.appendChild(miNodoBoton);
+                    miNodo.appendChild(miNodoCardBody);
+                    $items.appendChild(miNodo);
+                }
+            }
+
+            function anyadirCarrito () {
+
+                carrito.push(this.getAttribute('marcador'))
+
+                calcularTotal();
+
+                renderizarCarrito();
+            }
+
+            function renderizarCarrito () {
+
+                $carrito.textContent = '';
+
+                let carritoSinDuplicados = [...new Set(carrito)];
+
+                carritoSinDuplicados.forEach(function (item, indice) {
+
+                    let miItem = baseDeDatos.filter(function(itemBaseDatos) {
+                        return itemBaseDatos['id'] == item;
+                    });
+
+                    let numeroUnidadesItem = carrito.reduce(function (total, itemId) {
+                        return itemId === item ? total += 1 : total;
+                    }, 0);
+
+                    let miNodo = document.createElement('li');
+                    miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+                    miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0]['nombre']} - ${miItem[0]['precio']}$`;
+
+                    let miBoton = document.createElement('button');
+                    miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+                    miBoton.textContent = 'X';
+                    miBoton.style.marginLeft = '1rem';
+                    miBoton.setAttribute('item', item);
+                    miBoton.addEventListener('click', borrarItemCarrito);
+
+                    miNodo.appendChild(miBoton);
+                    $carrito.appendChild(miNodo);
+                })
+            }
+
+            function borrarItemCarrito () {
+                console.log()
+
+                let id = this.getAttribute('item');
+
+                carrito = carrito.filter(function (carritoId) {
+                    return carritoId !== id;
+                });
+
+                renderizarCarrito();
+
+                calcularTotal();
+            }
+
+            function calcularTotal () {
+
+                total = 0;
+
+                for (let item of carrito) {
+
+                    let miItem = baseDeDatos.filter(function(itemBaseDatos) {
+                        return itemBaseDatos['id'] == item;
+                    });
+                    total = total + miItem[0]['precio'];
+                }
+
+                let totalDosDecimales = total.toFixed(2);
+
+                $total.textContent = totalDosDecimales;
+            }
+
+            renderItems();
+        }
+    </script>
+</head>
+</html>
