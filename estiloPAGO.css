@@ -18,3 +18,13 @@ a:hover{background-color: #FF1493}
 aside{
   float:right;
 }
+.boton_personalizado{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+    background-color: #E0FFFF;
+    border-radius: 6px;
+    border: 2px solid white;
+  }
