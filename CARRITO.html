@@ -39,44 +39,44 @@
                 {
                     id: 1,
                     nombre: 'Sencillo',
-                    precio: 35,
-                    imagen: 'https://imagenes.lacelebracion.com/Temas%20varios%202/Dulces%20y%20postres/Adornos%20dorados%20para%20tortas%2021.jpg'
+                    precio: 30,
+                    imagen: 'https://github.com/SarahAguilar/PASTELERIA/blob/master/images/sencillo.jpg?raw=true'
                 },
                 {
                     id: 2,
-                    nombre: 'Adornado',
-                    precio: 55,
-                    imagen: 'https://cdn.shopify.com/s/files/1/0365/1045/products/Pastel_Conejito_macaron.jpeg?v=1584026128'
+                    nombre: 'Decorado',
+                    precio: 40,
+                    imagen: 'https://github.com/SarahAguilar/PASTELERIA/blob/master/images/decorado.jpg?raw=true'
                 },
                 {
                     id: 3,
-                    nombre: 'Muy Adornado ',
-                    precio: 65,
-                    imagen: 'https://cdn0.bodas.com.mx/usr/3/3/2/5/cfb_1229463.jpg'
+                    nombre: 'Muy decorado ',
+                    precio: 50,
+                    imagen: 'https://github.com/SarahAguilar/PASTELERIA/blob/master/images/muy%20decorado.jpg?raw=true'
                 },
                 {
                     id: 4,
                     nombre: 'Durazno',
                     precio: 5,
-                    imagen: 'https://img.vixdata.io/pd/jpg-large/es/sites/default/files/imj/elgranchef/d/duraznos-en-almibar.jpg'
+                    imagen: 'https://github.com/SarahAguilar/PASTELERIA/blob/master/images/durazno.jpg?raw=true'
                 },
                 {
                     id: 5,
                     nombre: 'Fresa',
                     precio: 10,
-                    imagen: 'https://recetolandia.com/wp-content/uploads/2000/08/fresones-en-almibar.jpg'
+                    imagen: 'https://github.com/SarahAguilar/PASTELERIA/blob/master/images/fresa.jpg?raw=true'
                 },
                 {
                     id: 6,
                     nombre: 'Frambuesa',
                     precio: 15,
-                    imagen: 'https://cl.all.biz/img/cl/catalog/26582.jpeg'
+                    imagen: 'https://github.com/SarahAguilar/PASTELERIA/blob/master/images/frambuesa.jpg?raw=true'
                 },
                 {
                     id: 7,
                     nombre: 'Nuez',
                     precio: 20,
-                    imagen: 'https://laopinion.com/wp-content/uploads/sites/3/2016/10/nuez-walnut-shutterstock_407822113-copy.jpg?quality=80&strip=all'
+                    imagen: 'https://github.com/SarahAguilar/PASTELERIA/blob/master/images/nuez.jpg?raw=true'
                 },
 
 
@@ -120,6 +120,7 @@
                     miNodoCardBody.appendChild(miNodoBoton);
                     miNodo.appendChild(miNodoCardBody);
                     $items.appendChild(miNodo);
+                    
                 }
             }
 
@@ -147,6 +148,7 @@
                     let numeroUnidadesItem = carrito.reduce(function (total, itemId) {
                         return itemId === item ? total += 1 : total;
                     }, 0);
+
 
                     let miNodo = document.createElement('li');
                     miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
