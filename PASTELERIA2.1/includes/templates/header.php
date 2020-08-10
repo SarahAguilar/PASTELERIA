@@ -21,6 +21,7 @@
                 <nav id="navegacion" class="navegacion">
                     <a href="nosotros.php">Nosotros</a>
                     <a href="sucursales.php">Sucursales</a>
+                    <a href="registro.php">Loguéate</a>
                 </nav>
             </div>
             <h1>Nunca es tarde para un pastel</h1>
